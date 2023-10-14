@@ -1,0 +1,11 @@
+#include <stdio.h>
+/**
+ * main - A program that shows the sizes of various types
+ *
+ * Return: 0 (Success)
+ */
+int main(void)
+{
+printf("Size of a char: %d\n,Size of a int: %d\n,Size of a long: %d\n,"sizeof(char),sizeof(int),sizeof(long))
+return (0);
+}
