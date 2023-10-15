@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/*
- * main - The Entry point to a code
+/**
+ * main - Entry point to a code that generate random number
  *
  * Return: (0) (Successor)
  */
