@@ -1,9 +1,10 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/* main - The Entry point to a code 
+/*
+ * main - The Entry point to a code
  *
- *Return: (0) (Successor)
+ * Return: (0) (Successor)
  */
 int main(void)
 {
@@ -19,3 +20,4 @@ int main(void)
 		printf("%d is negative\n", n);
 	return (0);
 }
+
