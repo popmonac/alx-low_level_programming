@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * _strcat - This function copies strings
+ * _strncpy - This function copies strings
  *
  * @dest: get an argument from the main.c
  * @src: get an argumnet from the main.c
- * * @n: Fetches the amount of characters to print
+ * @n: Fetches the amount of characters to print
  *
- * Return: prints destination arrrays
+ * Return: dest arrrays
  */
 char *_strncpy(char *dest, char *src, int n)
 {
