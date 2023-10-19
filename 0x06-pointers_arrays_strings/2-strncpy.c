@@ -1,18 +1,19 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * _strcat - This function concatenate two strings
+ * _strcat - This function copies strings
  *
  * @dest: get an argument from the main.c
  * @src: get an argumnet from the main.c
+ * * @n: Fetches the amount of characters to print
  *
- * Return: Print pt that the destination results
+ * Return: prints destination arrrays
  */
-char *_strcat(char *dest, char *src)
+char *_strncpy(char *dest, char *src, int n)
 {
 	int j = 0;
 
-	if (dest == NULL || src == NULL || n == 0)
+	if (src == NULL || n == 0 || dest == NULL)
 	{
 		return (dest);
 	}
