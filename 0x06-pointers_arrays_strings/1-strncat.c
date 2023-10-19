@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 /**
  * _strncat - This function concatenate n  number of strings
@@ -6,17 +7,31 @@
  * @src: gets argument from main.c
  * @n: gets the argument from main.c
  *
- * Return: Prints the destination
+ * Return: destination
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	int length = strlen(dest);
-	int j;
+	int a, len = 0;
 
-	for (j = 0; j < n && *src != '\0' ; j++)
-	{	dest[length + j] = *src;
+	while (*src != '\0')
+	{
+		len++;
 		src++;
 	}
-	dest[length + j] = '\0';
+
+	while (*dest != '\0')
+	{
+		dest++;
+	}
+
+	if (n > len)
+		n = len;
+
+	for (a = 0; a < n; a++)
+	{
+		*dest++ = *src++;
+	}
+
+	*dest = '\0';
 	return (dest);
 }
