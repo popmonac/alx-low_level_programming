@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "main.h"
 /**
  * _strncat - This function concatenate n  number of strings
