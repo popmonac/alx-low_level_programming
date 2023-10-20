@@ -3,21 +3,20 @@
 /**
  * string_toupper - This function convert lowercase to uppercase
  *
- * @a: gets the argument from main.c
+ * @b: gets the argument from main.c
  *
  * Return: Returns outcome
  */
-char *string_toupper(char *a)
+char *string_toupper(char *b)
 {
-	char *word = b;
+        int j;
 
-	while (*a != '\0')
-	{
-		if (*a >= 'a' && *a <= 'z')
-		{
-			*a -= 32;
-		}
-		b++;
-	}
-	return (word);
+        for (j = 0; b[j] != '\0'; j++)
+        {
+                if (*b[j] >= 'a' && *b[j] <= 'z')
+                {
+                        b[j] = b[j] - 32;
+                }
+        }
+        return (b);
 }
