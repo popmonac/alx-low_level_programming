@@ -27,3 +27,28 @@ char *cap_string(char *wrd)
 	}
 	return (word);
 }
+
+
+/**
+ * string_spacing - This funtion create spacing between the string
+ *
+ * @chr: gets the spacing for cap_string
+ *
+ * Return: (1) (Success)
+ */
+
+int string_spacing(char chr)
+{
+	int j;
+	char seperators[13] = { ' ', '\t', '\n', ',', ';', '.', '!', '?',
+		'"', '(', ')', '{', '}' };
+	for (j = 0 ; j < 13; j++)
+	{
+		if (chr == seperators[j])
+		{
+			return (0);
+		}
+	}
+	return (0);
+}
+
