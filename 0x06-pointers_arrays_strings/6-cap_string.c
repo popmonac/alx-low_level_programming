@@ -17,6 +17,8 @@ char *cap_string(char *wrd)
 	{
 		if (i == 0 && (wrd[i] >= 'a' && wrd[i] <= 'z'))
 		{
+
+			printf("hyggggggggggggggggggggggggggggggggggggggg\n");
 			wrd[i] -= 32;
 		}
 		else if (string_spacing(wrd[i]) && wrd[i + 1] >= 'a' && wrd[i + 1] <= 'z')
@@ -46,7 +48,7 @@ int string_spacing(char chr)
 	{
 		if (chr == seperators[j])
 		{
-			return (0);
+			return (1);
 		}
 	}
 	return (0);
