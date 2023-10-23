@@ -3,7 +3,7 @@
 /**
  * _memset - This function fills memory with a constant byte
  *
- * @s: gets an argument 
+ * @s: gets an argument
  * @b: gets an argumenet that fills 's'
  * @n: Number of byte
  *
