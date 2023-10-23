@@ -11,16 +11,16 @@ int spacing_format(int k)
 {
 	if (k > 9)
 	{
-		_putchar((i / 10) + '0');
+		_putchar((k / 10) + '0');
 	}
-	_putchar((i % 10) + '0');
+	_putchar((k % 10) + '0');
 	return (0);
 }
 
 /**
- * ten_numbers - This print 0 - 14 x 10 times
+ * more_numbers - This print 0 - 14 x 10 times
  */
-void ten_numbers(void)
+void more_numbers(void)
 {
 	int i, j;
 
