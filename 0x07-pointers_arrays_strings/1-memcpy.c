@@ -11,7 +11,7 @@
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	dest = *src;
+	char *jotter = dest;
 
 	while (n--)
 	{
@@ -19,5 +19,5 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 		dest++;
 		src++;
 	}
-	return (book);
+	return (jotter);
 }
