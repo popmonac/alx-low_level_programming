@@ -1,20 +1,22 @@
 #include <stdio.h>
 #include "main.h"
-#include <string.h>
 /**
- * _strlen - This function returns the length of a string.
+ * _strchr - this fuctions identify a character in a string
  *
- * @s: get the arguments from the main.c
- * Return: The string.
+ * @i: gets the string from main.c
+ * @j: gets argument from to identify from main.c
+ *
+ * Return: The string after the character.
  */
-int _strlen(char *s)
+char *_strchr(char *i, char j)
 {
-	int i;
-	int len = 0;
-
-	for (i = 0; s[i] != '\0'; i++)
+	while (*i)
 	{
-		len += 1;
+		if (*i == j)
+		{
+			return (i);
+		}
+		i++;
 	}
-	return (len);
+	return (NULL);
 }
