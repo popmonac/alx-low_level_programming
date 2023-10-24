@@ -2,33 +2,24 @@
 #include <stdlib.h>
 
 /**
- * multiples - This function checks for the multiples if 3 and
+ * main - This function checks for the multiples if 3 and
  *
  * Return: (0)
  */
 
-void multiples(void)
+void main(void)
 {
-	int i, j;
+	int a, b = 0;
 
-	for (i = 0; i < 1024; i++)
+	while (a < 1024)
 	{
-		if ((i % 3) == 0 || (i % 5) == 0)
+		if ((a % 3 == 0) || (a % 5 == 0))
 		{
-			j += i;
+			b += a;
 		}
+		a++;
 	}
-printf("%d\n", j);
-}
-
-/**
- * main - this function call the multiple function
- *
- * Return: Always 0
- */
-int main(void)
-{
-	multiples();
+	printf("%d\n", b);
 	return (0);
 }
 
