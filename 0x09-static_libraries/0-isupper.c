@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <ctype.h>
 /**
- * _isupper - Function that checks for Uppercase or Lowercase
+ * _isupper This function that checks for Uppercase or Lowercase
  *
- * @b: Fectches the argument from main.c
+ * @i: gets the argument from main.c
  * Return: Always 0
  */
-int _isupper(int b)
+int _isupper(int i)
 {
-	if (isupper(b))
+	if (isupper(i))
 	{
 		return (1);
 	}

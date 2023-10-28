@@ -27,8 +27,8 @@ char *_strncat(char *dis_ptr, char *src, int i)
 		dis_ptr++;
 	}
 
-	if (n > len)
-		n = len;
+	if (i > len)
+		i = len;
 
 	src = st;
 	for (a = 0; a < i; a++)

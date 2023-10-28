@@ -24,7 +24,7 @@ char *_strncpy(char *dis_ptr, char *src, int i)
 		a++;
 	}
 
-	while (a < n)
+	while (a < i)
 	{
 		dis_ptr[a] = '\0';
 		a++;

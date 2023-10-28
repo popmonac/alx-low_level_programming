@@ -12,13 +12,14 @@
 char *_strpbrk(char *n, char *allow)
 {
 	int a, b;
-	for (a = 0; s[a] != '\0'; a++)
+
+	for (a = 0; n[a] != '\0'; a++)
 	{
 		for (b = 0; allow[b] != '\0'; b++)
 		{
-			if (s[a] == allow[b])
+			if (n[a] == allow[b])
 			{
-				return (s + a);
+				return (n + a);
 			}
 		}
 	}
