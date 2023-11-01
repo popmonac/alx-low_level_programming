@@ -1,0 +1,45 @@
+#include <stdlib.h>
+#include "main.h"
+
+/**
+ * argstostr - This function concatenates all arguments of your program
+ * from command line
+ *
+ * @argc: gets the number of arguments from the command line
+ * @argv: gets the array containing arguments from the command line
+ *
+ * Return: This returns a pointer to string that containing all arguments
+ * or NULL if argc == 0, if argv == NULL, or upon failure.
+ */
+
+char *argstostr(int argc, char **argv)
+{
+	char *pt_new_str;
+	int length = 0, a = 0, b, c = 0;
+
+	if (argc <= 0 || argv == NULL)
+		return (NULL);
+
+	for (; a < argc; a++)
+	{
+		for (b = 0; argv[a][b]; b++)
+			length++;
+		length++;
+	}
+
+	pt_new_str = malloc(sizeof(char) * length + 1);
+	if (pt_new_str == NULL)
+		return (NULL);
+
+	for (a = 0; a < argc; a++)
+	{
+		for (b = 0; argv[a][b]; b++)
+		{
+			pt_new_str[c] = argv[a][b];
+			c++;
+		}
+		pt_new_str[c] = '\n';
+		c++;
+	}
+	return (pt_new_str);
+}
