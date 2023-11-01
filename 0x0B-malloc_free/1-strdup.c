@@ -19,8 +19,8 @@ int _strlen(char *s)
 }
 /**
  * _strdup - This function returns a pointer to a newly allocated space
- * in memory, 
- * 
+ * in memory,
+ *
  * @str: gets the argument from main.c
  *
  * Return: This returns the value in the allocated memory

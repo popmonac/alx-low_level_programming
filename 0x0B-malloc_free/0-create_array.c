@@ -3,8 +3,7 @@
 #include "main.h"
 
 /**
- * create_array - This function create an arrays of characters
- * 
+ * create_array - This function create an arrays of character
  * @size: gets the size to be allocated to HEEP SEGMENT
  * @c: gets the character to filled in that memory
  *
