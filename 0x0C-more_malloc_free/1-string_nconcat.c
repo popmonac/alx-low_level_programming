@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- * _strlen - This function create a concatenated string and allocation in memory
+ * _strlen - This function create a concatenated string
  *
  * @k: gets the argument string
  *
