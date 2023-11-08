@@ -1,18 +1,21 @@
+#include <stdlib.h>
 #include <stdio.h>
 #include "dog.h"
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * print_dog - This function that prints a struct dog
+ * @g: pointer ti struct dog
  */
-int main(void)
-{
-    dog_t my_dog;
 
-    my_dog.name = "Poppy";
-    my_dog.age = 3.5;
-    my_dog.owner = "Bob";
-    printf("My name is %s, and I am %.1f :) - Woof!\n", my_dog.name, my_dog.age);
-    return (0);
+void print_dog(struct dog *d)
+{
+	if (g == NULL)
+		return;
+
+	if (g->name == NULL)
+		g->name = "(nil)";
+	if (g->owner == NULL)
+		g->owner = "(nil)";
+
+	printf("Name: %s\nAge: %f\nOwner: %s\n", g->name, g->age, g->owner);
 }

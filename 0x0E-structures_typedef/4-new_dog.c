@@ -1,55 +1,43 @@
+#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 #include "dog.h"
 
 /**
- * new_dog - This Function that create a dog log book
- *
- * @name: gets the name of the dog
- * @age: gets the age of the dog
- * @owner: gets the owner name
- *
- * Return: The the newdog log
+ * *new_dog - a function that creates a new dog.
+ * @name: name of dog
+ * @age: age of dog
+ * @owner: owner of dog
+ * Return: pointer to the new dog crreated
  */
-
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *log_book;
-	char *_name, *_owner;
-	int name_length, owner_length, i;
+	dog_t *dog;
+	int length_a, length_b;
 
-	if (name == NULL || owner == NULL)
-		return (NULL);
-	name_length = strlen(name);
-	owner_length = strlen(owner);
-	log_book = malloc(sizeof(dog_t));
-	if (log_book == NULL)
-	{
-		free(log_book);
-		return (NULL);
-	}
-	_name = malloc(name_length + 1);
-	if (_name == NULL)
-	{
-		free(_name);
-		return (NULL);
-	}
-	for (i = 0 ; name[i]; i++)
-		_name[i] = name[i];
-	_name[i] = '\0';
-	_owner = malloc(owner_length + 1);
-	if (_owner == NULL)
-	{
-		free(_owner);
-		return (NULL);
-	}
+	length_a = strlen(name);
+	length_b = strlen(owner);
 
-	for (i = 0; owner[i]; i++)
-		_owner[i] = owner[i];
-	_owner[i] = '\0';
-	log_book->name = _name;
-	log_book->age = age;
-	log_book->owner = _owner;
-	return (log_book);
+	dog = malloc(sizeof(dog_t));
+	if (dog == NULL)
+		return (NULL);
+
+	dog->name = malloc(sizeof(char) * (length_a + 1));
+	if (dog->name == NULL)
+	{
+		free(dog);
+		return (NULL);
+	}
+	dog->owner = malloc(sizeof(char) * (length_b + 1));
+	if (dog->owner == NULL)
+	{
+		free(dog);
+		free(dog->name);
+		return (NULL);
+	}
+	strcpy(dog->name, name);
+	strcpy(dog->owner, owner);
+	dog->age = age;
+
+	return (dog);
 }
