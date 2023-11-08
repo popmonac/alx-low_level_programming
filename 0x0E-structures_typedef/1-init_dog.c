@@ -2,20 +2,20 @@
 #include "dog.h"
 
 /**
- * init_dog - Function that create a struct for a dog log
+ * init_dog - This Function that create a struct for a dog log
  *
- * @d: Fetches the name of the dog
- * @name: Fetches the name of the dog
- * @age: Fetches the name of the dog
- * @owner: Fetches the name of the owner
+ * @g: gets the name of the dog
+ * @name: gets the name of the dog
+ * @age: gets the name of the dog
+ * @owner: gets the name of the owner
  */
 
-void init_dog(struct dog *d, char *name, float age, char *owner)
+void init_dog(struct dog *g, char *name, float age, char *owner)
 {
-	if (d == NULL)
+	if (g == NULL)
 		return;
 
-	d->name = name;
-	d->age = age;
-	d->owner = owner;
+	g->name = name;
+	g->age = age;
+	g->owner = owner;
 }

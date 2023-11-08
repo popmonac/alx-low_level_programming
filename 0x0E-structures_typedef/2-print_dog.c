@@ -2,19 +2,19 @@
 #include "dog.h"
 
 /**
- * print_dog - Funtion that print info of a dog log
+ * print_dog - This Funtion that print info of a dog log
  *
- * @d: Fetches the address of the struct
+ * @g: gets the address of the struct
  *
  */
 
-void print_dog(struct dog *d)
+void print_dog(struct dog *g)
 {
-	if ((d->name) == NULL)
-		d->name = "(nill)";
-	if ((d->age) == 0)
-		d->age = 0;
-	if ((d->owner) == NULL)
-		d->owner = "(nill)";
-	printf("Name: %s\nAge: %f\nOwner: %s\n", d->name, d->age, d->owner);
+	if ((g->name) == NULL)
+		g->name = "(nill)";
+	if ((g->age) == 0)
+		g->age = 0;
+	if ((g->owner) == NULL)
+		g->owner = "(nill)";
+	printf("Name: %s\nAge: %f\nOwner: %s\n", g->name, g->age, g->owner);
 }

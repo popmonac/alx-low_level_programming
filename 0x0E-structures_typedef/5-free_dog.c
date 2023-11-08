@@ -3,20 +3,20 @@
 #include "dog.h"
 
 /**
- * free_dog - Function that free log_file
+ * free_dog - This Function that free log_file
  *
- * @d: fetches the size malloc size
+ * @g: get the size malloc size
  *
  * Return: Freed memory
  */
 
-void free_dog(dog_t *d)
+void free_dog(dog_t *g)
 {
-	if (d == NULL)
+	if (g == NULL)
 		return;
-	if (d->name != NULL)
-		free(d->name);
-	if (d->owner != NULL)
-		free(d->owner);
-	free(d);
+	if (g->name != NULL)
+		free(g->name);
+	if (g->owner != NULL)
+		free(g->owner);
+	free(g);
 }
