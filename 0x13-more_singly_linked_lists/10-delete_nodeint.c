@@ -3,36 +3,38 @@
 /**
  * delete_nodeint_at_index - Funtion that delete indexed node
  * @head: The linked list
- * @position: node to be deleted
+ * @index: index of the node to be deleted
  *
- * Return: 1 on sucess
+ * Return: 1 if it succeeded, -1 if it failed
  */
 
-int delete_nodeint_at_index(listint_t **head, unsigned int position)
+int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	listint_t *save, *current;
-	unsigned int i;
+	listint_t *temp = *head;
+	listint_t *currentnode = NULL;
+	unsigned int i = 0;
 
-	if (head == NULL)
+	if (*head == NULL)
 		return (-1);
 
-	save = *head;
-
-	if (position == 0)
+	if (index == 0)
 	{
-		*head = save->next;
-		free(save);
+		*head = (*head)->next;
+		free(temp);
 		return (1);
 	}
 
-	for (i = 0; i < position && save != NULL; i++)
+	while (i < index - 1)
 	{
-		if (save->next == NULL)
+		if (!temp || !(temp->next))
 			return (-1);
-		save = save->next;
+		temp = temp->next;
+		i++;
 	}
-	current= save->next;
-	save->next = current->next;
-	free(current);
+
+	currentnode = temp->next;
+	temp->next = currentnode->next;
+	free(currentnode);
+
 	return (1);
 }
