@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * *add_nodeint_end - This function adds a new node at the end of a listint_t list
+ * *add_nodeint_end - This adds a new node at the end of a listint_t list
  * @head: double pointer to the listint_t list
  * @k: the new node to be added
  *
