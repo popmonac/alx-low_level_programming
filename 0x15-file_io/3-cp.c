@@ -1,77 +1,72 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * cp - This Funtion copies content from file1 to file2
- * @file1: gets the main file
- * @file2: gets the file to be copied to
- *
- * Return: Nothing
+ * error_file - This checks if files can be opened.
+ * @file_locate: gets file_locate.
+ * @file_destination: gets file_destination.
+ * @argv: arguments vector.
+ * Return: no return.
  */
-void cp(const char *file1, const char *file2);
-void cp(const char *file1, const char *file2)
+void error_file(int file_locate, int file_destination, char *argv[])
 {
-	int file_a, file_b, errno_aclose, errno_bclose;
-	char buffer[1024];
-	ssize_t bytes_read, bytes_written;
-
-	file_a = open(file1, O_RDONLY);
-	if (file_a < 0)
+	if (file_locate == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", file1);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
- file_b = open(file2, O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	if  file_b < 0)
+	if (file_destination == -1)
 	{
-		dprintf(2, "Error: Can't write to %s\n", file2);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
-	}
-	while ((bytes_read = read(file_a, buffer, 1024)) > 0)
-	{
-		if (bytes_read == -1)
-		{
-			dprintf(2, "Error: Can't read from file %s\n", file1);
-			close(file_a);
-			close file_b);
-			exit(98);
-		}
-		bytes_written = write file_b, buffer, bytes_read);
-		if (bytes_written == -1)
-		{
-			dprintf(2, "Error: Can't write to %s\n", file2);
-			close(file_a);
-			close file_b);
-			exit(99);
-		}
-	}
-	errno_aclose = close(file_a);
-	if (errno_aclose == -1)
-	{
-		dprintf(2, "Error: Can't close %d", errno_aclose);
-		exit(100);
-	}
-	errno_bclose = close file_b);
-	if (errno_bclose == -1)
-	{
-		dprintf(2, "Error: Can't close %d", errno_bclose);
-		exit(100);
 	}
 }
 
-
 /**
- * main - Funtion that pass the args to my cp function
- * @argc: The number of args passed
- * @argv: The args passed "string"
- *
- * Return: Always 0
+ * main - thischeck the code for ALX School students.
+ * @argc: number of arguments
+ * @argv: arguments vector.
+ * Return: Always 0.
  */
-
 int main(int argc, char *argv[])
 {
+	int file_locate, file_destination, err_close;
+	ssize_t nchars, nwr;
+	char buf[1024];
+
 	if (argc != 3)
-		dprintf(2, "Usage: cp file_from file_to\n");
-	else
-		cp(argv[1], argv[2]);
+	{
+		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_locate file_destination");
+		exit(97);
+	}
+
+	file_locate = open(argv[1], O_RDONLY);
+	file_destination = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
+	error_file(file_locate, file_destination, argv);
+
+	nchars = 1024;
+	while (nchars == 1024)
+	{
+		nchars = read(file_locate, buf, 1024);
+		if (nchars == -1)
+			error_file(-1, 0, argv);
+		nwr = write(file_destination, buf, nchars);
+		if (nwr == -1)
+			error_file(0, -1, argv);
+	}
+
+	err_close = close(file_locate);
+	if (err_close == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_locate);
+		exit(100);
+	}
+
+	err_close = close(file_destination);
+	if (err_close == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_locate);
+		exit(100);
+	}
 	return (0);
 }
